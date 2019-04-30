@@ -107,6 +107,10 @@ RCT_NOT_IMPLEMENTED(- (instancetype)initWithCoder:(NSCoder *)aDecoder)
   [_webView stringByEvaluatingJavaScriptFromString:script];
 }
 
+- (void)setAlphaEnabled:(BOOL)alphaEnabled {
+  _webView.alpha = alphaEnabled ? 0.7f : 1.0f;
+}
+
 - (void)setSource:(NSDictionary *)source
 {
   if (![_source isEqualToDictionary:source]) {

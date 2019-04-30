@@ -332,6 +332,11 @@ class WebView extends React.Component {
     scalesPageToFit: PropTypes.bool,
 
     /**
+     * Boolean that controls whether the web content is transparent
+     */
+    alphaEnabled: PropTypes.bool,
+
+    /**
      * Function that allows custom handling of any web view requests. Return
      * `true` from the function to continue loading the request and `false`
      * to stop loading.
@@ -474,6 +479,7 @@ class WebView extends React.Component {
         key="webViewKey"
         style={webViewStyles}
         source={resolveAssetSource(source)}
+        alphaEnabled={this.props.alphaEnabled}
         injectedJavaScript={this.props.injectedJavaScript}
         bounces={this.props.bounces}
         scrollEnabled={this.props.scrollEnabled}
